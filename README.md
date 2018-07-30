@@ -2,7 +2,7 @@
  This is the implementation of a fully customizable neural network with arbitrary no. of hidden layers using only NumPy, in Python.
  
  
- #Documentation
+ # Documentation
  - tanh activation function has been used in this model.
  - ```tanhderiv(K)```: calculates the derivative of the tanh function.
  - ```initialisetheta(m,n,nodes,yn)```: initialises the parameter theta for all the given layers.
