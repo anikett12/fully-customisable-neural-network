@@ -10,23 +10,23 @@ return 1- (np.tanh(K)**2)
 
 
 
-def initialisetheta(m,n,a,yn):
+def initialisetheta(m,n,nodes,yn):
  """
  used to randomly initialise the weights matrix and store it in the
  form of a list. Note that the bias term has been directly added to each weight matrix.
  """
 
 theta=[]
-    theta.append(np.random.randn(n+1,a[0]))
-    t=len(a)
+    theta.append(np.random.randn(n+1,nodes[0]))
+    t=len(nodes)
     for i in range(t-1):
-        theta.append(np.random.randn(a[i]+1,a[i+1]))
-    theta.append(np.random.randn(a[len(a)-1]+1,yn))
+        theta.append(np.random.randn(nodes[i]+1,nodes[i+1]))
+    theta.append(np.random.randn(nodes[len(nodes)-1]+1,yn))
     return theta
 
 
 
-def hiddenlayer(m,a):
+def hiddenlayer(m,nodes):
 """
 used to initialise the hidden layers with ones.
 Bias term has been included here as well.
@@ -91,17 +91,17 @@ def main():
     n = np.size(x, 1)
     yn = np.size(y, 1)
     
-    a = [30,20,40] """ number of layers and nodes in each layer """
+    nodes = [30,20,40] """ number of layers and nodes in each layer """
     X = np.ones((m,n+1))
     X[:,1:]=x
-    output=np.zeros((m,4))
+    
    """
    theta and hidden layer initialisation
    
    """
 
-    theta = initialisetheta(m,n,a,yn)
-    hidden = hiddenlayer(m,a)
+    theta = initialisetheta(m,n,nodes,yn)
+    hidden = hiddenlayer(m,nodes)
     
    
   
